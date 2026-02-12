@@ -11,38 +11,58 @@
 6.pip install numpy pip install matplotlib
 
 
-1#operations
-import numpy as np
+
+1.import numpy as np
+
+# -----------------------------
+# Fuzzy Operations
+# -----------------------------
+
 def fuzzy_union_or(A, B):
     if len(A) != len(B):
         raise ValueError("Fuzzy sets must have same length")
     return np.maximum(A, B)
+
 def fuzzy_intersection_and(A, B):
     if len(A) != len(B):
         raise ValueError("Fuzzy sets must have same length")
     return np.minimum(A, B)
+
 def fuzzy_complement_not(A):
     return 1 - A
+
+# -----------------------------
+# Universe of Discourse
+# -----------------------------
+
 U = np.array([1, 2, 3, 4, 5])
-print("Universe of Discourse (U):", U, "\n")
+print("Universe of Discourse (U):", U)
+
+# Fuzzy Sets
 A = np.array([1.0, 0.8, 0.4, 0.1, 0.0])
 B = np.array([0.0, 0.1, 0.3, 0.7, 1.0])
 
-print("Original Sets")
+print("\nOriginal Sets")
 print("Fuzzy Set A:", A)
-print("Fuzzy Set B:", B, "\n")
+print("Fuzzy Set B:", B)
+
+# -----------------------------
+# Operations
+# -----------------------------
+
 A_OR_B = fuzzy_union_or(A, B)
-print("Fuzzy UNION (A OR B):")
-print(A_OR_B, "\n")
+print("\nFuzzy UNION (A OR B):")
+print(A_OR_B)
 
 A_AND_B = fuzzy_intersection_and(A, B)
-print("Fuzzy INTERSECTION (A AND B):")
-print(A_AND_B, "\n")
+print("\nFuzzy INTERSECTION (A AND B):")
+print(A_AND_B)
 
 NOT_A = fuzzy_complement_not(A)
-print("Fuzzy COMPLEMENT (NOT A):")
-print(NOT_A, "\n")
+print("\nFuzzy COMPLEMENT (NOT A):")
+print(NOT_A)
 
 NOT_B = fuzzy_complement_not(B)
-print("Fuzzy COMPLEMENT (NOT B):")
+print("\nFuzzy COMPLEMENT (NOT B):")
 print(NOT_B)
+
