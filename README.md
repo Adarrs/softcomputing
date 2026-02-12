@@ -15,8 +15,6 @@
 1.import numpy as np
 
 # -----------------------------
-# Fuzzy Operations
-# -----------------------------
 
 def fuzzy_union_or(A, B):
     if len(A) != len(B):
@@ -32,8 +30,6 @@ def fuzzy_complement_not(A):
     return 1 - A
 
 # -----------------------------
-# Universe of Discourse
-# -----------------------------
 
 U = np.array([1, 2, 3, 4, 5])
 print("Universe of Discourse (U):", U)
@@ -46,8 +42,6 @@ print("\nOriginal Sets")
 print("Fuzzy Set A:", A)
 print("Fuzzy Set B:", B)
 
-# -----------------------------
-# Operations
 # -----------------------------
 
 A_OR_B = fuzzy_union_or(A, B)
